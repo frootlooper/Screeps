@@ -13,6 +13,10 @@ var utilPopulator = {
 
         console.log('Harvesters: ' + harvesters.length + ', Builders: ' + builders.length + ', Upgraders: ' + upgraders.length);
 
+        //TODO: calculated constants to determine population needed
+        var totalPossibleEnergy = Game.spawns['Spawn1'].room.energyCapacity;
+        var numConstructionSites = Game.constructionSites.length;
+
         if(harvesters.length < 3 && Game.spawns['Spawn1'].room.energyAvailable >= 800) {
             var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,WORK,WORK,WORK,WORK,CARRY,CARRY,CARRY,MOVE], undefined, {role: 'harvester'});
             console.log('Spawning new harvester: ' + newName);
