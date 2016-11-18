@@ -16,6 +16,7 @@ var utilPopulator = {
         var totalRoomCapacity = Game.spawns['Spawn1'].room.energyCapacityAvailable;
         var totalRoomAvailable = Game.spawns['Spawn1'].room.energyAvailable;
         var basicBodyParts = [MOVE,CARRY,WORK];
+        console.log('Energy: '+totalRoomAvailable+'/'+totalRoomCapacity);
 
         if (harvesters.length < 3 && totalRoomAvailable == totalRoomCapacity) {
             var harvesterBodyParts = basicBodyParts.slice();
