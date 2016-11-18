@@ -21,7 +21,7 @@ var utilPopulator = {
         if (harvesters.length < 3 && totalRoomAvailable == totalRoomCapacity) {
             var harvesterBodyParts = basicBodyParts.slice();
             var harvesterBodyPartsEnergyCost = BODYPART_COST["move"] + BODYPART_COST["carry"] + BODYPART_COST["work"];
-            while (harvesterBodyPartsEnergyCost <= totalRoomAvailable + BODYPART_COST["work"]) {
+            while (harvesterBodyPartsEnergyCost + BODYPART_COST["work"] <= totalRoomAvailable) {
                 harvesterBodyParts.push(WORK);
                 harvesterBodyPartsEnergyCost = harvesterBodyPartsEnergyCost + BODYPART_COST["work"];
             }
@@ -30,7 +30,7 @@ var utilPopulator = {
         } else if (upgraders.length < 3 && totalRoomAvailable == totalRoomCapacity) {
             var upgraderBodyParts = basicBodyParts.slice();
             var upgraderBodyPartsEnergyCost = BODYPART_COST["move"] + BODYPART_COST["carry"] + BODYPART_COST["work"];
-            while (upgraderBodyPartsEnergyCost <= totalRoomAvailable + BODYPART_COST["work"]) {
+            while (upgraderBodyPartsEnergyCost + BODYPART_COST["work"] <= totalRoomAvailable) {
                 upgraderBodyParts.push(WORK);
                 upgraderBodyPartsEnergyCost = upgraderBodyPartsEnergyCost + BODYPART_COST["work"];
             }
@@ -39,7 +39,7 @@ var utilPopulator = {
         } else if (builders.length < 10 && totalRoomAvailable == totalRoomCapacity) {
             var builderBodyParts = basicBodyParts.slice();
             var builderBodyPartsEnergyCost = BODYPART_COST["move"] + BODYPART_COST["carry"] + BODYPART_COST["work"];
-            while (builderBodyPartsEnergyCost <= totalRoomAvailable + BODYPART_COST["work"]) {
+            while (builderBodyPartsEnergyCost + BODYPART_COST["work"] <= totalRoomAvailable) {
                 builderBodyParts.push(WORK);
                 builderBodyPartsEnergyCost = builderBodyPartsEnergyCost + BODYPART_COST["work"];
             }
